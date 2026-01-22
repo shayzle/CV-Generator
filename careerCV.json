@@ -1,0 +1,117 @@
+{
+    "firstname": "Shanisya",
+    "middlename": "Fitria",
+    "lastname": "Lahida",
+    "designation": "Web Developer",
+    "email": "shanisyalahida@gmail.com",
+    "phone": "+33683445888",
+    "address": "22 Avenue de Versailles, Paris, France",
+    "summary": "I am currently a web development student in Paris, studying at Epitech, and learning how to build websites and applications that are both functional and easy to use. I didn’t start with a purely technical background, so web development became a way for me to combine creativity, logic, and problem-solving in something concrete. I enjoy seeing ideas turn into real interfaces and understanding how each part of a project works together. During my studies, I have worked with HTML, CSS, JavaScript, and PHP, as well as tools like Bootstrap, jQuery, and Composer. ",
+    "skills": [
+        {
+            "skill": "Communicative"
+        },
+        {
+            "skill": "Teamwork"
+        },
+        {
+            "skill": "Confident"
+        },
+        {
+            "skill": "Visioner"
+        },
+        {
+            "skill": "Presitent"
+        },
+        {
+            "skill": "Patient"
+        },
+        {
+            "skill": "Leadership"
+        }
+    ],
+    "achievements": [
+        {
+            "achieve_title": "DELF B2",
+            "achieve_description": "80\/100"
+        },
+        {
+            "achieve_title": "DELF B1",
+            "achieve_description": "60\/100"
+        }
+    ],
+    "educations": [
+        {
+            "edu_school": "Epitech School",
+            "edu_degree": "Master",
+            "edu_city": "Paris, France",
+            "edu_start_date": "2020-02-02",
+            "edu_graduation_date": "2020-02-20",
+            "edu_description": ""
+        },
+        {
+            "edu_school": "Sorbonne Université",
+            "edu_degree": "Bachelor",
+            "edu_city": "Paris, France",
+            "edu_start_date": "2020-02-20",
+            "edu_graduation_date": "2020-02-20",
+            "edu_description": ""
+        },
+        {
+            "edu_school": "Français Langue Étrangère",
+            "edu_degree": "Pre-Bachelor",
+            "edu_city": "Nantes, France",
+            "edu_start_date": "2020-02-20",
+            "edu_graduation_date": "2020-02-20",
+            "edu_description": ""
+        }
+    ],
+    "experiences": [
+        {
+            "exp_title": "Viva Tech Volunteer",
+            "exp_organization": "Viva Technology",
+            "exp_location": "Paris, France",
+            "exp_start_date": "2020-02-02",
+            "exp_end_date": "2020-02-02",
+            "exp_description": ""
+        },
+        {
+            "exp_title": "Event Organisateur ",
+            "exp_organization": "The Nitro Factory",
+            "exp_location": "Paris, France",
+            "exp_start_date": "2020-02-02",
+            "exp_end_date": "2020-02-20",
+            "exp_description": ""
+        },
+        {
+            "exp_title": "Social Media Manager",
+            "exp_organization": "PPI Paris",
+            "exp_location": "Paris, France",
+            "exp_start_date": "2020-02-20",
+            "exp_end_date": "2020-02-20",
+            "exp_description": ""
+        }
+    ],
+    "projects": [
+        {
+            "proj_title": "Move Ease Paris Agency",
+            "proj_link": "https:\/\/shayzle.github.io\/MOVE-EASE-PARIS-AGENCY-WEBSITE\/",
+            "proj_description": "Built with HTML, CSS and JavaScript"
+        },
+        {
+            "proj_title": "Maths Cles School Project",
+            "proj_link": "https:\/\/shayzle.github.io\/MATHS-CLES-SCHOOL-TEAM-PROJECT\/",
+            "proj_description": "Built with HTML, CSS and JavaScript"
+        },
+        {
+            "proj_title": "HTML and CSS Tailwind",
+            "proj_link": "https:\/\/shayzle.github.io\/HTMLandTAILWIND\/",
+            "proj_description": "Built with HTML and CSS Tailwind"
+        },
+        {
+            "proj_title": "HTML and CSS",
+            "proj_link": "https:\/\/shayzle.github.io\/HTMLandCSS\/",
+            "proj_description": "Built with HTML and CSS "
+        }
+    ]
+}
