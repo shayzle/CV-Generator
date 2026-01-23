@@ -3,6 +3,7 @@
 // $data = json_decode(file_get_contents("php://input"), true);
 
 require __DIR__ . '/vendor/autoload.php';
+// include __DIR__ . '/css/style.css';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -46,7 +47,7 @@ $html = '
 <style>
 
 @page {
-  size: A4 landscape;
+  size: A4;
   margin: 0;
 }
 
@@ -72,7 +73,7 @@ html, body {
 
 .left {
   width: 40%;
-  background: #0f4d44;
+  background: #084C41;
   color: white;
   padding: 30px;
 }
@@ -83,13 +84,11 @@ html, body {
 }
 
 .photo {
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    // margin-right: auto;
-    // margin-left: auto;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 10px auto;
 }
 .photo img{
     width: 100%;
@@ -101,6 +100,7 @@ html, body {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+  padding: 7px 0 7px 0;
 }
 
 .role {
@@ -152,7 +152,7 @@ ul {
   text-align: right;
   font-style: italic;
   font-size: 10px;
-  color: #555;
+  color: #000000;
   vertical-align: top;
 }
 
@@ -184,10 +184,22 @@ $html .= '
     <h2>SKILLS</h2>
     <ul>';
 
+// foreach ($skills as $s) {
+//     if (!empty($s['skill'])) {
+//         $html .= '<li>' . htmlspecialchars($s['skill']) . '</li>';
+//     }
+// }
+
 foreach ($skills as $s) {
-    if (!empty($s['skill'])) {
-        $html .= '<li>' . htmlspecialchars($s['skill']) . '</li>';
-    }
+    $html .= '
+    <li class="item">
+      <div class="item-left">
+        <strong>' . htmlspecialchars($s['skill'] ?? '') . '</strong><br>
+      </div>
+      <div class="item-right">
+        <strong>' . htmlspecialchars($s['level'] ?? '') . '</strong>
+      </div>
+    </li>';
 }
 
 
@@ -285,7 +297,7 @@ $html .= '
 
 
 
-// JSON
+// // JSON
 $jsonData = [
     'firstname'   => $firstname,
     'middlename'  => $middlename,
@@ -315,10 +327,25 @@ file_put_contents(
 $options = new Options();
 $options->set('isRemoteEnabled', true);
 
-$dompdf = new Dompdf($options);
-$dompdf->loadHtml($html);
-$dompdf->setPaper('A4', 'landscape');
-$dompdf->render();
+$dompdf = new Dompdf($options); // create a pdf
+$dompdf->loadHtml($html); // charging content into dompdf
+$dompdf->setPaper('A4'); // configure the format
+$dompdf->render(); // render pdf
 
-$dompdf->stream('CareerCV.pdf', ['Attachment' => true]);
+$dompdf->stream('CareerCV.pdf', ['Attachment' => true]); // send to the browser
 exit;
+
+
+
+
+
+// $htmlTemplate = file_get_contents('cv.php');
+// $dompdf = new Dompdf();
+// $dompdf->loadHtml($htmlTemplate);
+
+// // setup the paper and orientation : landscape / portrait
+//   $dompdf->setPaper('A4');
+//   $dompdf->render();
+
+// // output the generated PDF to Browser
+//   $dompdf->stream();

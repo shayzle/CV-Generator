@@ -1,17 +1,11 @@
-// regex for validation 
+// regex for validation   
 const strRegex = /^[a-zA-Z\s]*$/;
 // containing only letters 
 const emailRegex = 
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const phoneRegex = /^[+](\d{3})\)?(\d{3})(\d{5,6})$|^(\d{10,10})$/im;
-// const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-/* supprts following number formats - (123)
-456-7890, (123)456-7890, 123-456-7890, 123.
-456-7890, 1234567890, +31636363634,
-075-63546725
-Chercher Phone Regex Français
-*/
 const digitRegex = /^\d+$/;
+
 
 const mainForm = document.getElementById("cv-form");
 // const mainForm = document.querySelectorAll('.needs-validation')
@@ -101,6 +95,7 @@ const getUserInputs = () => {
     projDescriptionElem = document.querySelectorAll(".proj_description");
 
   let skillElem = document.querySelectorAll(".skill");
+  let levelElem = document.querySelectorAll(".level");
 
   // Event Listeners for Form Validation
   firstnameElem.addEventListener("keyup", (e) =>
@@ -215,6 +210,12 @@ const getUserInputs = () => {
       validateFormData(e.target, validType.ANY, "Skill"),
     ),
   );
+  levelElem.forEach((item) =>
+    item.addEventListener("change", (e) =>
+      validateFormData(e.target, validType.ANY, "Level"),
+    ),
+  );
+
 
   return {
     firstname: firstnameElem.value,
@@ -268,7 +269,11 @@ const getUserInputs = () => {
       projLinkElem,
       projDescriptionElem,
     ),
-    skills: fetchValues(["skill"], skillElem),
+    skills: fetchValues(
+      ["skill", "level"], 
+      skillElem,
+      levelElem,
+    ),
   };
 };
 
@@ -344,7 +349,7 @@ const displayCV = (userData) => {
   summaryDsp.innerHTML = userData.summary;
   showListData(userData.projects, projectDsp);
   showListData(userData.achievements, achievementsDsp);
-  showListData(userData.skills, skillsDsp);
+  showSkillsData(userData.skills, skillsDsp);
   showListData(userData.educations, educationDsp);
   showListData(userData.experiences, experiencesDsp);
 };
@@ -354,6 +359,7 @@ const generateCV = () => {
   let userData = getUserInputs();
   displayCV(userData);
   console.log(userData);
+  localStorage.setItem("CareerCVData", JSON.stringify(userData));
 };
 
 // pour afficher l'image -> to display a photo
@@ -374,27 +380,69 @@ function printCV() {
 
 
 
-// // JSON SCRIPT
 
-// function getCVasJSON() {
-//   const cvData = getUserInputs();
-//   return JSON.stringify(cvData);
+// Level (skill section) problem
+const showSkillsData = (skillsData, container) => {
+  container.innerHTML = "";
+
+  skillsData.forEach((item) => {
+    const row = document.createElement("div");
+    row.classList.add("preview-skill-row");
+
+    const skillName = document.createElement("span");
+    skillName.classList.add("preview-skill-name");
+    skillName.textContent = item.skill;
+
+    const skillLevel = document.createElement("span");
+    skillLevel.classList.add("preview-skill-level");
+    skillLevel.textContent = item.level;
+
+    row.appendChild(skillName);
+    row.appendChild(skillLevel);
+    container.appendChild(row);
+  });
+};
+
+
+
+// Local Storage
+window.addEventListener("DOMContentLoaded", () => {
+  const savedCV = localStorage.getItem("CareerCVData");
+
+  if (savedCV) {
+    const data = JSON.parse(savedCV);
+
+    firstnameElem.value = data.firstname || "";
+    middlenameElem.value = data.middlename || "";
+    lastnameElem.value = data.lastname || "";
+    designationElem.value = data.designation || "";
+    addressElem.value = data.address || "";
+    emailElem.value = data.email || "";
+    phonenumberElem.value = data.phonenumber || "";
+    summaryElem.value = data.summary || "";
+
+    displayCV(data);
+  }
+});
+
+
+
+// Change the Themes
+// function setTheme(themeName) {
+//   const preview = document.querySelector(".preview-cnt");
+
+//   preview.classList.remove("theme-green", "theme-dark");
+//   preview.classList.add(themeName);
+
+//   localStorage.setItem("CareerCVTheme", themeName);
 // }
 
-// console.log(getCVasJSON());
 
-// // function json
-// function downloadJSON() {
-//   const cvData = getUserInputs();
-//   const json = JSON.stringify(cvData, null, 2);
 
-//   const blob = new Blob([json], { type: "application/json" });
-//   const url = URL.createObjectURL(blob);
 
-//   const a = document.createElement("a");
-//   a.href = url;
-//   a.download = "cv-data.json";
-//   a.click();
+// To Reset Button
+function resetCV() {
+  localStorage.removeItem("CareerCVData");
+  location.reload();
+}
 
-//   URL.revokeObjectURL(url);
-// }

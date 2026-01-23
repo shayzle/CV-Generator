@@ -1,33 +1,52 @@
 {
     "firstname": "Shanisya",
-    "middlename": "Fitria",
+    "middlename": "Fitria ",
     "lastname": "Lahida",
     "designation": "Web Developer",
     "email": "shanisyalahida@gmail.com",
-    "phone": "+33683445888",
+    "phone": "+33683442555",
     "address": "22 Avenue de Versailles, Paris, France",
-    "summary": "I am currently a web development student in Paris, studying at Epitech, and learning how to build websites and applications that are both functional and easy to use. I didn’t start with a purely technical background, so web development became a way for me to combine creativity, logic, and problem-solving in something concrete. I enjoy seeing ideas turn into real interfaces and understanding how each part of a project works together. During my studies, I have worked with HTML, CSS, JavaScript, and PHP, as well as tools like Bootstrap, jQuery, and Composer. ",
+    "summary": "I'm a student in web development in Epitech, Paris, France. I've been living in France for almost 5 years now. I've done DELF B1 and DELF B2 as a prove of my level in french language.",
     "skills": [
         {
-            "skill": "Communicative"
+            "skill": "HTML",
+            "level": "Expert"
         },
         {
-            "skill": "Teamwork"
+            "skill": "CSS",
+            "level": "Expert"
         },
         {
-            "skill": "Confident"
+            "skill": "JavaScript",
+            "level": "Intermediate"
         },
         {
-            "skill": "Visioner"
+            "skill": "PHP",
+            "level": "Intermediate"
         },
         {
-            "skill": "Presitent"
+            "skill": "Python",
+            "level": "Advanced"
         },
         {
-            "skill": "Patient"
+            "skill": "Java",
+            "level": "Beginner"
         },
         {
-            "skill": "Leadership"
+            "skill": "MySQL",
+            "level": "Advanced"
+        },
+        {
+            "skill": "French Language",
+            "level": "Advanced"
+        },
+        {
+            "skill": "English Language",
+            "level": "Expert"
+        },
+        {
+            "skill": "Indonesian Language",
+            "level": "Expert"
         }
     ],
     "achievements": [
@@ -45,7 +64,7 @@
             "edu_school": "Epitech School",
             "edu_degree": "Master",
             "edu_city": "Paris, France",
-            "edu_start_date": "2020-02-02",
+            "edu_start_date": "2002-02-20",
             "edu_graduation_date": "2020-02-20",
             "edu_description": ""
         },
@@ -56,14 +75,6 @@
             "edu_start_date": "2020-02-20",
             "edu_graduation_date": "2020-02-20",
             "edu_description": ""
-        },
-        {
-            "edu_school": "Français Langue Étrangère",
-            "edu_degree": "Pre-Bachelor",
-            "edu_city": "Nantes, France",
-            "edu_start_date": "2020-02-20",
-            "edu_graduation_date": "2020-02-20",
-            "edu_description": ""
         }
     ],
     "experiences": [
@@ -71,15 +82,15 @@
             "exp_title": "Viva Tech Volunteer",
             "exp_organization": "Viva Technology",
             "exp_location": "Paris, France",
-            "exp_start_date": "2020-02-02",
-            "exp_end_date": "2020-02-02",
+            "exp_start_date": "2020-02-20",
+            "exp_end_date": "2020-02-20",
             "exp_description": ""
         },
         {
             "exp_title": "Event Organisateur ",
             "exp_organization": "The Nitro Factory",
             "exp_location": "Paris, France",
-            "exp_start_date": "2020-02-02",
+            "exp_start_date": "2020-02-20",
             "exp_end_date": "2020-02-20",
             "exp_description": ""
         },
@@ -96,22 +107,17 @@
         {
             "proj_title": "Move Ease Paris Agency",
             "proj_link": "https:\/\/shayzle.github.io\/MOVE-EASE-PARIS-AGENCY-WEBSITE\/",
-            "proj_description": "Built with HTML, CSS and JavaScript"
+            "proj_description": ""
         },
         {
             "proj_title": "Maths Cles School Project",
             "proj_link": "https:\/\/shayzle.github.io\/MATHS-CLES-SCHOOL-TEAM-PROJECT\/",
-            "proj_description": "Built with HTML, CSS and JavaScript"
+            "proj_description": ""
         },
         {
             "proj_title": "HTML and CSS Tailwind",
             "proj_link": "https:\/\/shayzle.github.io\/HTMLandTAILWIND\/",
-            "proj_description": "Built with HTML and CSS Tailwind"
-        },
-        {
-            "proj_title": "HTML and CSS",
-            "proj_link": "https:\/\/shayzle.github.io\/HTMLandCSS\/",
-            "proj_description": "Built with HTML and CSS "
+            "proj_description": ""
         }
     ]
 }

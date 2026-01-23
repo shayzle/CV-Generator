@@ -6,12 +6,12 @@
     <meta name="description" content="This is a cv generator site that created by HTML, CSS, JavaScript and PHP. This is a part of a school project from Epitech School. Built by Shanisya Lahida">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resume CV</title>
-    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-<body>
+<body> 
 
 
 
@@ -271,13 +271,27 @@
                             <div class="repeater" data-repeater-list="group-e">
                                 <div data-repeater-item>
                                     <div class="cv-form-row cv-form-row-skills">
-                                        <div class="form-elem">
-                                            <label for="skill1" class="form-label">Skills</label>
-                                            <input name="skill" type="text" class="form-control skill" id="skill1" onkeyup="generateCV()">
-                                            <span class="form-text"></span>
-                                        </div>
+                                        <div class="cols-3">
+                                            <div class="form-elem">
+                                                <label for="skill1" class="form-label">Skills</label>
+                                                <input name="skill" type="text" class="form-control skill" id="skill1" onkeyup="generateCV()">
+                                                <span class="form-text"></span>
+                                            </div>
+                                            <div class="form-elem">
+                                                <label for="level1" class="form-label">Level</label>
+                                                <!-- <input name="level" type="text" class="form-control level" id="level1" onkeyup="generateCV()"> -->
+                                                <select name="level" class="form-control level" id="level1" onchange="generateCV()" required>
+                                                    <option value="">Choose...</option>
+                                                    <option>Beginner</option>
+                                                    <option>Intermediate</option>
+                                                    <option>Advanced</option>
+                                                    <option>Expert</option>
+                                                </select>
+                                                <span class="form-text"></span>
+                                            </div>
 
-                                        <button data-repeater-delete type="button" class="repeater-remove-btn">-</button>
+                                            <button data-repeater-delete type="button" class="repeater-remove-btn">-</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -285,18 +299,21 @@
                         </div>
                     </div>
 
-
                     <div class="text-center mt-4 mb-4">
                         <button type="submit" class="btn btn-success">
                             Download PDF
                         </button>
+                        <button type="button" class="btn btn-outline-danger" onclick="resetCV()">
+                            Reset CV
+                        </button>
                     </div>
-
 
                     </form>
                 </div>
             </div>
         </div>
+
+
 
 
 
@@ -392,14 +409,21 @@
     
 
 
-
-
-    <section class="print-btn-sc">
+    <!-- <section class="print-btn-sc">
         <div class="container">
             <button type="button" class="print-btn btn btn-primary" onclick="printCV()">Print CV</button>
         </div>
-    </section>
+        <div class="text-center mb-3">
+            <button type="button" class="btn btn-outline-success" onclick="setTheme('theme-green')">
+                Green Theme
+            </button>
 
+            <button type="button" class="btn btn-outline-dark" onclick="setTheme('theme-dark')">
+                Dark Theme
+            </button>
+        </div>
+    </section> -->
+    
 
 
     <!-- Bootstrap -->
