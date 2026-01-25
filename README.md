@@ -16,7 +16,8 @@ composer install
 
 
 ## Start the built-in PHP server
-php -S localhost:8000
+php -S localhost:8000   
+-> I use MAMP.
 
 
 *After this, open the browser and go to* : (http://localhost:8000/cv.php) 
