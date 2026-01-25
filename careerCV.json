@@ -64,7 +64,7 @@
             "edu_school": "Epitech School",
             "edu_degree": "Master",
             "edu_city": "Paris, France",
-            "edu_start_date": "2002-02-20",
+            "edu_start_date": "2020-02-20",
             "edu_graduation_date": "2020-02-20",
             "edu_description": ""
         },
@@ -117,6 +117,11 @@
         {
             "proj_title": "HTML and CSS Tailwind",
             "proj_link": "https:\/\/shayzle.github.io\/HTMLandTAILWIND\/",
+            "proj_description": ""
+        },
+        {
+            "proj_title": "HTML and CSS",
+            "proj_link": "https:\/\/shayzle.github.io\/HTMLandCSS\/",
             "proj_description": ""
         }
     ]

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>     
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -407,25 +407,10 @@
 
     </section>
     
-
-
-    <!-- <section class="print-btn-sc">
-        <div class="container">
-            <button type="button" class="print-btn btn btn-primary" onclick="printCV()">Print CV</button>
-        </div>
-        <div class="text-center mb-3">
-            <button type="button" class="btn btn-outline-success" onclick="setTheme('theme-green')">
-                Green Theme
-            </button>
-
-            <button type="button" class="btn btn-outline-dark" onclick="setTheme('theme-dark')">
-                Dark Theme
-            </button>
-        </div>
-    </section> -->
     
 
 
+    
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <!-- JQuery CDN -->

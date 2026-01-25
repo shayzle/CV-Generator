@@ -1,7 +1,5 @@
 <?php
 
-// $data = json_decode(file_get_contents("php://input"), true);
-
 require __DIR__ . '/vendor/autoload.php';
 // include __DIR__ . '/css/style.css';
 
@@ -48,39 +46,53 @@ $html = '
 
 @page {
   size: A4;
-  margin: 0;
+  margin: 10mm;
+}
+
+body {
+  transform: scale(0.85);
+  transform-origin: top left;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   font-family: DejaVu Sans, sans-serif;
 }
 
 .page {
   width: 100%;
   height: 100%;
-  display: table;
+  // display: table;
+  display: block;
+  // display: flex;
+}
+
+.page::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .left, .right {
-  display: table-cell;
+  // display: table-cell;
   vertical-align: top;
-  height: 100%;
+  height: 95%;
+  float: left;
 }
 
 .left {
   width: 40%;
   background: #084C41;
   color: white;
-  padding: 30px;
+  padding: 20px;
 }
 
 .right {
   width: 60%;
-  padding: 30px;
+  padding: 20px;
 }
 
 .photo {
@@ -92,7 +104,7 @@ html, body {
 }
 .photo img{
     width: 100%;
-    height: 100%;
+    // height: 100%;
     object-fit: cover;
 }
 
@@ -327,25 +339,11 @@ file_put_contents(
 $options = new Options();
 $options->set('isRemoteEnabled', true);
 
-$dompdf = new Dompdf($options); // create a pdf
-$dompdf->loadHtml($html); // charging content into dompdf
-$dompdf->setPaper('A4'); // configure the format
-$dompdf->render(); // render pdf
+$dompdf = new Dompdf($options); 
+$dompdf->loadHtml($html); 
+$dompdf->setPaper('A4'); 
+$dompdf->render(); 
 
-$dompdf->stream('CareerCV.pdf', ['Attachment' => true]); // send to the browser
+$dompdf->stream('CareerExportCV.pdf', ['Attachment' => true]); 
 exit;
 
-
-
-
-
-// $htmlTemplate = file_get_contents('cv.php');
-// $dompdf = new Dompdf();
-// $dompdf->loadHtml($htmlTemplate);
-
-// // setup the paper and orientation : landscape / portrait
-//   $dompdf->setPaper('A4');
-//   $dompdf->render();
-
-// // output the generated PDF to Browser
-//   $dompdf->stream();

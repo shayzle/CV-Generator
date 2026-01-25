@@ -1,4 +1,4 @@
-// regex for validation   
+// regex for validation    
 const strRegex = /^[a-zA-Z\s]*$/;
 // containing only letters 
 const emailRegex = 
@@ -8,7 +8,6 @@ const digitRegex = /^\d+$/;
 
 
 const mainForm = document.getElementById("cv-form");
-// const mainForm = document.querySelectorAll('.needs-validation')
 const validType = {
   TEXT: "text",
   TEXT_EMP: "text_emp",
@@ -17,6 +16,7 @@ const validType = {
   PHONENUMBER: "phonenumber",
   ANY: "any",
 };
+
 
 // User Inputq Elements
 let firstnameElem = mainForm.firstname,
@@ -29,8 +29,6 @@ let firstnameElem = mainForm.firstname,
   phonenumberElem = mainForm.phonenumber,
   summaryElem = mainForm.summary;
 
-// const imageInput = document.getElementById("image_input");
-// const imageDsp = document.getElementById("image_dsp");
 
 // Display Elemetns
 let nameDsp = document.getElementById("fullname_dsp"),
@@ -48,11 +46,13 @@ let nameDsp = document.getElementById("fullname_dsp"),
   educationDsp = document.getElementById("educations_dsp"),
   experiencesDsp = document.getElementById("experiences_dsp");
 
+
 // First value is for the attributes and secon one passes the nodelists
 const fetchValues = (attrs, ...nodeLists) => {
   let elemsAttrsCount = nodeLists.length;
   let elemsDataCount = nodeLists[0].length;
   let tempDataArr = [];
+
 
   // first loop deals with the no of repeaters value
   for (let i = 0; i < elemsDataCount; i++) {
@@ -66,6 +66,7 @@ const fetchValues = (attrs, ...nodeLists) => {
   }
   return tempDataArr;
 };
+
 
 const getUserInputs = () => {
   // achivements
@@ -339,6 +340,7 @@ const showListData = (listData, listContainer) => {
   });
 };
 
+
 const displayCV = (userData) => {
   nameDsp.innerHTML =
     userData.firstname + " " + userData.middlename + " " + userData.lastname;
@@ -353,6 +355,7 @@ const displayCV = (userData) => {
   showListData(userData.educations, educationDsp);
   showListData(userData.experiences, experiencesDsp);
 };
+
 
 // pour generate cv
 const generateCV = () => {
@@ -424,19 +427,6 @@ window.addEventListener("DOMContentLoaded", () => {
     displayCV(data);
   }
 });
-
-
-
-// Change the Themes
-// function setTheme(themeName) {
-//   const preview = document.querySelector(".preview-cnt");
-
-//   preview.classList.remove("theme-green", "theme-dark");
-//   preview.classList.add(themeName);
-
-//   localStorage.setItem("CareerCVTheme", themeName);
-// }
-
 
 
 
